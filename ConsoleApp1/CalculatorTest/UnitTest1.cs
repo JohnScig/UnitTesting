@@ -35,29 +35,29 @@ namespace CalculatorTest
                 var calculator = new Calculator();
 
                 var addResult = calculator.Add(a, b);
+
                 Assert.Equal(result, addResult);
+
+                //only possible with "fluent assertion"
+                //addResult.Should().Be(result);
             }
 
 
+            //[Theory]
+            //[MemberData(nameof(AddData))]
 
+            //public void AddTwoIntegersMemberData(int a, int b, int result)
+            //{
+            //    var calculator = new Calculator();
 
+            //    var addResult = calculator.Add(a, b);
+            //    Assert.Equal(result, addResult);
+            //}
 
-
-            [Theory]
-            [MemberData(nameof(AddData))]
-
-            public void AddTwoIntegersMemberData(int a, int b, int result)
-            {
-                var calculator = new Calculator();
-
-                var addResult = calculator.Add(a, b);
-                Assert.Equal(result, addResult);
-            }
-
-            public static IEnumerable<object[]> AddData()
-            {
-                return null;
-            }
+            //public static IEnumerable<object[]> AddData()
+            //{
+            //    return null;
+            //}
         }
     }
 }
